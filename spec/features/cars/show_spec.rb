@@ -13,14 +13,13 @@ RSpec.describe 'the child show page' do
       end
       it "see the child with that id and their attributes" do
         visit "/cars/#{@car_1.id}"
+        expect(page).to have_content(@car_1.id)
         expect(page).to have_content(@car_1.make)
         expect(page).to have_content(@car_1.model)
         expect(page).to have_content(@car_1.year)
         expect(page).to have_content(@car_1.auto_pilot)
-        expect(page).to_not have_content(@car_2.make)
         expect(page).to_not have_content(@car_2.model)
         expect(page).to_not have_content(@car_2.year)
-        expect(page).to_not have_content(@car_2.auto_pilot)
       end
     end
   end
