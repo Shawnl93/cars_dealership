@@ -1,6 +1,5 @@
 require 'rails_helper'
 
-
 RSpec.describe 'the parents show page' do
   describe 'As a visitor' do
     describe 'when I visit the parents show page' do
