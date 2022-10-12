@@ -244,6 +244,8 @@
           null,
           1,
           1,
+          null,
+          1,
           null
         ]
       },
@@ -273,8 +275,23 @@
           1,
           null
         ]
+      },
+      "/Users/s.lee/turing/mod2_1/projects/cars_dealership/app/controllers/cars_controller.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/s.lee/turing/mod2_1/projects/cars_dealership/app/controllers/application_controller.rb": {
+        "lines": [
+          1,
+          null
+        ]
       }
     },
-    "timestamp": 1665610469
+    "timestamp": 1665610936
   }
 }

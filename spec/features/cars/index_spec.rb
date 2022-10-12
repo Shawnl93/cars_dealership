@@ -13,7 +13,22 @@ RSpec.describe 'the child index page' do
       end
       it "see the child and their attributes" do
         visit "/cars"
-
+        expect(page).to have_content(@car_1.make)
+        expect(page).to have_content(@car_1.model)
+        expect(page).to have_content(@car_1.year)
+        expect(page).to have_content(@car_2.auto_pilot)
+        expect(page).to have_content(@car_2.make)
+        expect(page).to have_content(@car_2.model)
+        expect(page).to have_content(@car_2.year)
+        expect(page).to have_content(@car_2.auto_pilot)
+        expect(page).to have_content(@car_3.make)
+        expect(page).to have_content(@car_3.model)
+        expect(page).to have_content(@car_3.year)
+        expect(page).to have_content(@car_3.auto_pilot)
+        expect(page).to have_content(@car_4.make)
+        expect(page).to have_content(@car_4.model)
+        expect(page).to have_content(@car_4.year)
+        expect(page).to have_content(@car_4.auto_pilot)
       end
     end
   end
