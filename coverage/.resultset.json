@@ -256,6 +256,7 @@
       "/Users/s.lee/turing/mod2_1/projects/cars_dealership/app/models/dealership.rb": {
         "lines": [
           1,
+          1,
           null
         ]
       },
@@ -274,7 +275,7 @@
           null,
           null,
           1,
-          null,
+          1,
           null,
           null
         ]
@@ -286,6 +287,6 @@
         ]
       }
     },
-    "timestamp": 1665608025
+    "timestamp": 1665609672
   }
 }

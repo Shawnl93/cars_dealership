@@ -4,6 +4,6 @@ class DealershipsController < ApplicationController
   end
 
   def show
-
+    @dealership = Dealership.find(params[:id])
   end
 end
