@@ -15,5 +15,9 @@ RSpec.describe Dealership do
     it "orders by most recently created" do
       expect(Dealership.created_by).to eq([@dealership, @dealership_1])
     end
+
+    it "can count number of cars" do
+      expect(@dealership.car_count).to eq(2)
+    end
   end
 end
