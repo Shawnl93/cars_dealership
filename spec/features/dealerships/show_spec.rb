@@ -24,6 +24,7 @@ RSpec.describe 'the parents show page' do
 
       it "show number of children associated with this parent" do
         expect(page).to have_content("Cars at T3SLA dealership: 2")
+        save_and_open_page
       end
     end
   end
