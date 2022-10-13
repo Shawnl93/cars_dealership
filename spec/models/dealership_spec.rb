@@ -13,7 +13,7 @@ RSpec.describe Dealership do
       @car_4 = @dealership_1.cars.create!(make: "Tesla", model: "Y", year: 2019, auto_pilot: false)
     end
     it "orders by most recently created" do
-      expect(@dealership.created_by).to eq([@car_1, @car_2])
+      expect(Dealership.created_by).to eq([@dealership, @dealership_1])
     end
   end
 end

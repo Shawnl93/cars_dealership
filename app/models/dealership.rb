@@ -1,8 +1,7 @@
 class Dealership < ApplicationRecord
   has_many :cars
 
-  def created_by
-    self.cars
-    binding.pry
+  def self.created_by
+    self.order(created_at: :asc)
   end
 end
