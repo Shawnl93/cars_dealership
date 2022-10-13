@@ -1,4 +1,6 @@
-<h1> <%= @dealership.name  %> <%= @dealership.id %> </h1>
+<h1> <%= @dealership.name  %> ID:<%= @dealership.id %> </h1>
 <p> <%= @dealership.city %> </p>
 <p><%= @dealership.charging_stations %> </p>
 <p><%= @dealership.leasing %> </p>
+
+<p>Cars at <%= @dealership.name %> dealership: <%= @dealership.car_count %></p>
