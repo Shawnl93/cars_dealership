@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'the parents index' do
+RSpec.describe 'the parent creation ' do
   describe 'As a visitor' do
     describe 'when I visit the parents index page' do
       before :each do
@@ -12,29 +12,11 @@ RSpec.describe 'the parents index' do
         @car_4 = @dealership_1.cars.create!(make: "Tesla", model: "Y", year: 2019, auto_pilot: false)
         visit '/dealerships'
       end
-      it "can display name of parent record in the system" do
-        expect(page).to have_content(@dealership.name)
-      end
 
-      it "order by most recently created" do
-        expect(@dealership.name).to appear_before(@dealership_1.name)
+      it "has a link to create a new parent record" do
+        click_link "New Dealership"
+        expect(current_path).to eq("/dealerships/new")
       end
-
-      it "can see when the record was created" do
-        expect(page).to have_content(@dealership.created_at)
-        expect(page).to have_content(@dealership_1.created_at)
-      end
-
-      it "has link at top of page that link to child index" do
-        click_on "cars"
-        expect(current_path).to eq("/cars")
-      end
-
-      it "has link at top of page that link to parent index" do
-        click_on "dealerships"
-        expect(current_path).to eq("/dealerships")
-      end
-
     end
   end
 end
