@@ -26,6 +26,8 @@ class DealershipsController < ApplicationController
     redirect_to "/dealerships/#{@dealership.id}"
   end
 
+private
+
   def dealership_params
     params.permit(:name, :city, :charging_stations, :leasing)
   end
