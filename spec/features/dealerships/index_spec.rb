@@ -35,6 +35,7 @@ RSpec.describe 'the parents index' do
         click_on "dealerships"
         expect(current_path).to eq("/dealerships")
       end
+
     end
   end
 end
