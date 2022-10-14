@@ -11,3 +11,5 @@
 <% @dealership.cars.each do |car| %>
 <p><%= car.make %> <%= link_to car.model, "/dealerships/#{@dealership.id}/cars" %> </p>
 <% end %>
+
+<p> <%= button_to "Update Dealership", "/dealerships/#{@dealership.id}/edit", method: :get%> <p>

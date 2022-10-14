@@ -15,7 +15,15 @@ RSpec.describe 'editing parent' do
       it "has a link to update parent" do
         visit "/dealerships/#{@dealership.id}"
         click_button "Update Dealership"
-        expect(page).to eq("/dealerships/#{@dealership.id}/edit")
+        expect(current_path).to eq("/dealerships/#{@dealership.id}/edit")
+      end
+
+      it "edit parent's attributes" do
+        visit "/dealerships/#{@dealership.id}/edit"
+        fill_in "name", with: "t3sla"
+        click_button "Update Dealership"
+        expect(current_path).to eq("/dealerships/#{@dealership.id}")
+        expect(page).to have_content("t3sla")
       end
     end
   end
