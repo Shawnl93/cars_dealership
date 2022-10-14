@@ -10,12 +10,23 @@ RSpec.describe 'the parent creation ' do
         @car_2 = @dealership_1.cars.create!(make: "Tesla", model: "3", year: 2021, auto_pilot: false)
         @car_3 = @dealership.cars.create!(make: "Tesla", model: "X", year: 2020, auto_pilot: true)
         @car_4 = @dealership_1.cars.create!(make: "Tesla", model: "Y", year: 2019, auto_pilot: false)
-        visit '/dealerships'
       end
 
       it "has a link to create a new parent record" do
+        visit '/dealerships'
         click_link "New Dealership"
         expect(current_path).to eq("/dealerships/new")
+      end
+
+      it "can create a new parent" do
+        visit "/dealerships/new"
+        fill_in("Name", with: "TESL@")
+        fill_in("City", with: "Boulder")
+        fill_in("charging_stations", with: 10)
+        fill_in("Leasing", with: "true")
+        click_button("Create Dealership")
+        expect(current_path).to eq("/dealerships")
+        save_and_open_page
       end
     end
   end
