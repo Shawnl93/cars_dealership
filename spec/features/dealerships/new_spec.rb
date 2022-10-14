@@ -16,6 +16,7 @@ RSpec.describe 'the parent creation ' do
         visit '/dealerships'
         click_link "New Dealership"
         expect(current_path).to eq("/dealerships/new")
+        save_and_open_page
       end
 
       it "can create a new parent" do
@@ -26,7 +27,6 @@ RSpec.describe 'the parent creation ' do
         fill_in("Leasing", with: "true")
         click_button("Create Dealership")
         expect(current_path).to eq("/dealerships")
-        save_and_open_page
       end
     end
   end
