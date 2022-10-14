@@ -12,7 +12,11 @@ class DealershipsController < ApplicationController
   end
 
   def create
-    dealership = Dealership.create(name: params[:name], city: params[:city], charging_stations: params[:charging_stations], leasing: params[:leasing])
+    dealership = Dealership.create(dealership_params)
     redirect_to "/dealerships"
+  end
+
+  def dealership_params
+    params.permit(:name, :city, :charging_stations, :leasing)
   end
 end
