@@ -10,9 +10,9 @@ RSpec.describe 'the child index page' do
         @car_2 = @dealership.cars.create!(make: "Tesla", model: "3", year: 2021, auto_pilot: false)
         @car_3 = @dealership.cars.create!(make: "Tesla", model: "X", year: 2020, auto_pilot: true)
         @car_4 = @dealership.cars.create!(make: "Tesla", model: "Y", year: 2019, auto_pilot: false)
+        visit "/cars"
       end
       it "see the child and their attributes" do
-        visit "/cars"
         expect(page).to have_content(@car_1.make)
         expect(page).to have_content(@car_1.model)
         expect(page).to have_content(@car_1.year)
@@ -29,6 +29,11 @@ RSpec.describe 'the child index page' do
         expect(page).to have_content(@car_4.model)
         expect(page).to have_content(@car_4.year)
         expect(page).to have_content(@car_4.auto_pilot)
+      end
+
+      it "has link at top of page that link to child index" do
+        click_on cars
+        expect(current_path).to eq("/cars")
       end
     end
   end
