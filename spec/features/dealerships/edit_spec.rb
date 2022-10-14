@@ -27,7 +27,6 @@ RSpec.describe 'editing parent' do
         click_button "Update Dealership"
         expect(current_path).to eq("/dealerships/#{@dealership.id}")
         expect(page).to have_content("t3sla")
-        save_and_open_page
       end
     end
   end
