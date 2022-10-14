@@ -20,10 +20,14 @@ RSpec.describe 'editing parent' do
 
       it "edit parent's attributes" do
         visit "/dealerships/#{@dealership.id}/edit"
-        fill_in "name", with: "t3sla"
+        fill_in("name", with: "t3sla")
+        fill_in("city", with: "boulder")
+        fill_in("charging_stations", with: 2)
+        fill_in("leasing", with: false)
         click_button "Update Dealership"
         expect(current_path).to eq("/dealerships/#{@dealership.id}")
         expect(page).to have_content("t3sla")
+        save_and_open_page
       end
     end
   end
