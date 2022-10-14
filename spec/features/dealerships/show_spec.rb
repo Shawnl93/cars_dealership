@@ -35,6 +35,11 @@ RSpec.describe 'the parents show page' do
         click_on "dealerships"
         expect(current_path).to eq("/dealerships")
       end
+
+      it "link to take me to that parent's child page" do
+        click_on @car_1.model
+        expect(current_path).to eq("/dealerships/#{@dealership.id}/cars")
+      end
     end
   end
 end

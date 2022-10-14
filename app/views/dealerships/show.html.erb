@@ -7,3 +7,7 @@
 <p><%= @dealership.leasing %> </p>
 
 <p>Cars at <%= @dealership.name %> dealership: <%= @dealership.car_count %></p>
+
+<% @dealership.cars.each do |car| %>
+<p><%= car.make %> <%= link_to car.model, "/dealerships/#{@dealership.id}/cars" %> </p>
+<% end %>
