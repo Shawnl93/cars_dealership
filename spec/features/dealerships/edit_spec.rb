@@ -14,7 +14,6 @@ RSpec.describe 'editing parent' do
 
       it "has a link to update parent" do
         visit "/dealerships/#{@dealership.id}"
-        save_and_open_page
         click_button "Update Dealership"
         expect(page).to eq("/dealerships/#{@dealership.id}/edit")
       end
