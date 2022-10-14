@@ -25,6 +25,16 @@ RSpec.describe 'the parents index' do
         expect(page).to have_content(@dealership.created_at)
         expect(page).to have_content(@dealership_1.created_at)
       end
+
+      it "has link at top of page that link to child index" do
+        click_on "cars"
+        expect(current_path).to eq("/cars")
+      end
+
+      it "has link at top of page that link to parent index" do
+        click_on "dealerships"
+        expect(current_path).to eq("/dealerships")
+      end
     end
   end
 end

@@ -1,3 +1,7 @@
+<%= link_to "cars", "/cars" %>
+<%= link_to "dealerships", "/dealerships" %>
+
+
 <h1> Dealerships index page </h1>
 <% @dealerships.created_by.each do |dealership| %>
   <p>Dealership: <%= dealership.name %> </p>
