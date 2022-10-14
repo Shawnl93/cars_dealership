@@ -1,3 +1,6 @@
+<%= link_to "cars", "/cars" %>
+<%= link_to "dealerships", "/dealerships" %>
+
 <% @cars.each do |car| %>
   <h3> <%= car.make %> <%= car.model %></h3>
   <p>Year: <%= car.year %> </p>

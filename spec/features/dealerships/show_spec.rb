@@ -24,7 +24,21 @@ RSpec.describe 'the parents show page' do
 
       it "show number of children associated with this parent" do
         expect(page).to have_content("Cars at T3SLA dealership: 2")
-        save_and_open_page
+      end
+
+      it "has link at top of page that link to child index" do
+        click_on "cars"
+        expect(current_path).to eq("/cars")
+      end
+
+      it "has link at top of page that link to parent index" do
+        click_on "dealerships"
+        expect(current_path).to eq("/dealerships")
+      end
+
+      it "link to take me to that parent's child page" do
+        click_on @car_1.model
+        expect(current_path).to eq("/dealerships/#{@dealership.id}/cars")
       end
     end
   end

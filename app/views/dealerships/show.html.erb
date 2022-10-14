@@ -1,6 +1,13 @@
+<%= link_to "cars", "/cars" %>
+<%= link_to "dealerships", "/dealerships" %>
+
 <h1> <%= @dealership.name  %> ID:<%= @dealership.id %> </h1>
 <p> <%= @dealership.city %> </p>
 <p><%= @dealership.charging_stations %> </p>
 <p><%= @dealership.leasing %> </p>
 
 <p>Cars at <%= @dealership.name %> dealership: <%= @dealership.car_count %></p>
+
+<% @dealership.cars.each do |car| %>
+<p><%= car.make %> <%= link_to car.model, "/dealerships/#{@dealership.id}/cars" %> </p>
+<% end %>
