@@ -1,5 +1,6 @@
 <%= link_to "cars", "/cars" %>
 <%= link_to "dealerships", "/dealerships" %>
+<%= link_to "New Car", "/dealerships/#{@dealership.id}/cars/new" %>
 
 <% @cars.each do |car| %>
   <p>Make: <%= car.make %></p>

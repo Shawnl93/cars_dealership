@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'the parents index' do
+RSpec.describe 'the parent creation ' do
   describe 'As a visitor' do
     describe 'when I visit the parents index page' do
       before :each do
@@ -10,31 +10,23 @@ RSpec.describe 'the parents index' do
         @car_2 = @dealership_1.cars.create!(make: "Tesla", model: "3", year: 2021, auto_pilot: false)
         @car_3 = @dealership.cars.create!(make: "Tesla", model: "X", year: 2020, auto_pilot: true)
         @car_4 = @dealership_1.cars.create!(make: "Tesla", model: "Y", year: 2019, auto_pilot: false)
+      end
+
+      it "has a link to create a new parent record" do
         visit '/dealerships'
-      end
-      it "can display name of parent record in the system" do
-        expect(page).to have_content(@dealership.name)
-      end
-
-      it "order by most recently created" do
-        expect(@dealership.name).to appear_before(@dealership_1.name)
+        click_link "New Dealership"
+        expect(current_path).to eq("/dealerships/new")
       end
 
-      it "can see when the record was created" do
-        expect(page).to have_content(@dealership.created_at)
-        expect(page).to have_content(@dealership_1.created_at)
-      end
-
-      it "has link at top of page that link to child index" do
-        click_on "cars"
-        expect(current_path).to eq("/cars")
-      end
-
-      it "has link at top of page that link to parent index" do
-        click_on "dealerships"
+      it "can create a new parent" do
+        visit "/dealerships/new"
+        fill_in("Name", with: "TESL@")
+        fill_in("City", with: "Boulder")
+        fill_in("charging_stations", with: 10)
+        fill_in("Leasing", with: "true")
+        click_button("Create Dealership")
         expect(current_path).to eq("/dealerships")
       end
-
     end
   end
 end
