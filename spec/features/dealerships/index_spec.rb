@@ -35,6 +35,12 @@ RSpec.describe 'the parents index' do
         expect(current_path).to eq("/dealerships")
       end
 
+      it "has link to edit parents info" do
+        visit "/dealerships"
+        click_on "Update #{@dealership.name}"
+        expect(current_path).to eq("/dealerships/#{@dealership.id}/edit")
+      end
+
     end
   end
 end

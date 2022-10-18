@@ -28,6 +28,7 @@ RSpec.describe 'editing parent' do
         expect(current_path).to eq("/dealerships/#{@dealership.id}")
         expect(page).to have_content("t3sla")
       end
+
     end
   end
 end
