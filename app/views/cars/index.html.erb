@@ -2,7 +2,7 @@
 <%= link_to "dealerships", "/dealerships" %>
 
 <% @cars.true_value.each do |car| %>
-  <h3> <%= car.make %> <%= car.model %></h3>
+  <h3> <%= car.make %> <%= car.model %> <%= link_to "Update #{car.model}", "/cars/#{car.id}/edit", method: :get %></h3>
   <p>Year: <%= car.year %> </p>
   <p>Auto Pilot: <%= car.auto_pilot %> </p>
 <% end %>

@@ -39,6 +39,11 @@ RSpec.describe 'parent child index page' do
         visit "/dealerships/#{@dealership.id}/cars?sort=1"
         expect(page).to have_content(@car_1.model)
       end
+
+      it "has link to update child info" do
+        click_on "Update #{@car_1.model}"
+        expect(current_path).to eq("/cars/#{@car_1.id}/edit")
+      end
     end
   end
 end

@@ -5,7 +5,7 @@
 
 <% @cars.each do |car| %>
   <p>Make: <%= car.make %></p>
-  <p>Model: <%= car.model %></p>
+  <p>Model: <%= car.model %> <%= car.model %> <%= link_to "Update #{car.model}", "/cars/#{car.id}/edit", method: :get %></p>
   <p>Year: <%= car.year %></p>
   <p>Auto_pilot: <%= car.auto_pilot %></p>
 <% end %>
