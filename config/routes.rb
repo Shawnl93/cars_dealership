@@ -16,4 +16,5 @@ Rails.application.routes.draw do
   get '/dealerships/:dealership_id/cars/new', to: 'dealershipcars#new'
   post '/dealerships/:dealership_id/cars', to: 'dealershipcars#create'
 
+
 end

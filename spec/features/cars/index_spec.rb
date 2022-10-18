@@ -16,7 +16,6 @@ RSpec.describe 'the child index page' do
         expect(page).to have_content(@car_1.make)
         expect(page).to have_content(@car_1.model)
         expect(page).to_not have_content(@car_2.model)
-        save_and_open_page
 
       end
 

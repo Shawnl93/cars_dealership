@@ -34,6 +34,12 @@ RSpec.describe 'parent child index page' do
         click_on "dealerships"
         expect(current_path).to eq("/dealerships")
       end
+
+      xit "has a link to sort children in reverse alphabetical order" do
+        click_on "Sort"
+        save_and_open_page
+        expect(@car_3.model).to appear_before(@car_1.model)
+      end
     end
   end
 end
