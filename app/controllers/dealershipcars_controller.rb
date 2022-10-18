@@ -1,7 +1,11 @@
 class DealershipcarsController < ApplicationController
   def index
     @dealership = Dealership.find(params[:dealership_id])
-    @cars = @dealership.cars
+    if params[:sort] == "1"
+      @cars = @dealership.cars.order(model: :desc)
+    else
+      @cars = @dealership.cars
+    end
   end
 
   def new
@@ -13,7 +17,6 @@ class DealershipcarsController < ApplicationController
     car = @dealership.cars.create(dealershipcars_params)
     redirect_to "/dealerships/#{@dealership.id}/cars"
   end
-
 
 private
 

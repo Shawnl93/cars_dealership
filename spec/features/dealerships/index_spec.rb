@@ -17,7 +17,7 @@ RSpec.describe 'the parents index' do
       end
 
       it "order by most recently created" do
-        expect(@dealership.name).to appear_before(@dealership_1.name)
+        expect(@dealership_1.name).to appear_before(@dealership.name)
       end
 
       it "can see when the record was created" do
