@@ -1,8 +1,8 @@
 require 'rails_helper'
 
-RSpec.describe 'the parent creation ' do
+RSpec.describe 'the parents index page' do
   describe 'As a visitor' do
-    describe 'when I visit the parents index page' do
+    describe 'When i visit a parents index page' do
       before :each do
         @dealership = Dealership.create!(name: "T3SLA", city: "Lone_tree", charging_stations: 5, leasing: true)
         @dealership_1 = Dealership.create!(name: "T3SL@", city: "Denver", charging_stations: 3, leasing: true)
@@ -12,20 +12,11 @@ RSpec.describe 'the parent creation ' do
         @car_4 = @dealership_1.cars.create!(make: "Tesla", model: "Y", year: 2019, auto_pilot: false)
       end
 
-      it "has a link to create a new parent record" do
-        visit '/dealerships'
-        click_link "New Dealership"
-        expect(current_path).to eq("/dealerships/new")
-      end
-
-      it "can create a new parent" do
-        visit "/dealerships/new"
-        fill_in("Name", with: "TESL@")
-        fill_in("City", with: "Boulder")
-        fill_in("charging_stations", with: 10)
-        choose("leasing", with: true)
-        click_button("Create Dealership")
+      it "can delete parent from index page" do
+        visit "/dealerships/#{@dealership.id}"
+        click_button "Delete Dealership"
         expect(current_path).to eq("/dealerships")
+        expect(page).to_not have_content(@dealership.name)
       end
     end
   end

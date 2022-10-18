@@ -13,3 +13,4 @@
 <% end %>
 
 <p> <%= button_to "Update Dealership", "/dealerships/#{@dealership.id}/edit", method: :get%> <p>
+<p> <%= button_to "Delete Dealership", "/dealerships/#{@dealership.id}", method: :delete %></p>
