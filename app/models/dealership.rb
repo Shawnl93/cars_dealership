@@ -1,5 +1,5 @@
 class Dealership < ApplicationRecord
-  has_many :cars
+  has_many :cars, :dependent => :delete_all
 
   def self.created_by
     self.order(created_at: :desc)

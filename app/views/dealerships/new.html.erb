@@ -1,11 +1,16 @@
 <%= form_with url: '/dealerships', method: :post, local: true do |form| %>
-  <%= form.label :name %>
-  <%= form.text_field :name %>
-  <%= form.label :city %>
-  <%= form.text_field :city %>
-  <%= form.label :charging_stations %>
-  <%= form.text_field :charging_stations %>
-  <%= form.label :leasing %>
-  <%= form.text_field :leasing %>
-  <%= form.submit "Create Dealership" %>
+<p><%= form.label :name %>
+  <%= form.text_field :name %></p>
+<p><%= form.label :city %>
+  <%= form.text_field :city %></p>
+<p><%= form.label :charging_stations %>
+  <%= form.text_field :charging_stations %></p>
+
+
+  <p><%= form.radio_button :leasing, true %>
+  <%= form.label :true %>
+  <%= form.radio_button :leasing, false %>
+  <%= form.label :false %></p>
+
+  <p><%= form.submit "Create Dealership" %></p>
 <% end %>
